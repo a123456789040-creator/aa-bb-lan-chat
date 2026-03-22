@@ -4,11 +4,46 @@
 [![Release](https://img.shields.io/github/v/tag/a123456789040-creator/aa-bb-lan-chat?label=release)](https://github.com/a123456789040-creator/aa-bb-lan-chat/releases)
 [![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](./LICENSE)
 
-A small LAN chat app for three fixed participants: `AA`, `BB`, and `CC`.
+A small, inspectable LAN chat app for three fixed participants: `AA`, `BB`, and `CC`.
 
-The project is intentionally simple: one Node.js server, one static frontend, and a few helper scripts for smoke testing and sending messages from the terminal. It is useful as a local collaboration demo, a Socket.IO reference project, or a starting point for lightweight team tools on the same network.
+AA BB LAN Chat is a lightweight realtime collaboration demo built with Node.js, Express, and Socket.IO. It is designed to be easy to run, easy to inspect, and easy to extend. The project works well as:
+
+- A local collaboration tool for three fixed roles on the same network
+- A compact reference implementation for Socket.IO chat patterns
+- A starter project for experimenting with presence, role claiming, and lightweight team workflows
 
 ![AA BB LAN Chat demo](./docs/assets/aa-bb-lan-chat-demo.png)
+
+## Why This Project Exists
+
+Many chat demos are either too toy-like to be useful or too large to study quickly. This project aims for the middle ground: a small codebase with enough real behavior to be a practical reference.
+
+It includes:
+
+- Fixed role ownership
+- Presence tracking
+- Typing indicators
+- LAN address discovery
+- CLI tooling for scripted interactions and smoke tests
+
+## Project Snapshot
+
+| Area | Details |
+| --- | --- |
+| Stack | Node.js, Express, Socket.IO, plain HTML/CSS/JS |
+| Runtime | Local machine or trusted LAN |
+| Roles | `AA`, `BB`, `CC` |
+| State | In-memory message history |
+| Test coverage | End-to-end smoke test via Node clients |
+| Primary use | Demo app, reference implementation, local coordination |
+
+## Demo Flow
+
+1. Start the server with `npm start`.
+2. Open the app on one or more devices on the same LAN.
+3. Claim `AA`, `BB`, or `CC`.
+4. Exchange messages in real time.
+5. Use `npm run demo:seed` to populate a quick example conversation for screenshots or demos.
 
 ## Features
 
@@ -51,6 +86,24 @@ http://192.168.x.x:3000
 ```
 
 Devices on the same LAN can open that URL and claim one of the three roles.
+
+## Architecture
+
+```mermaid
+flowchart LR
+    A["Browser client (AA)"]
+    B["Browser client (BB)"]
+    C["Browser client (CC)"]
+    D["CLI helpers"]
+    E["Express + Socket.IO server"]
+    F["In-memory state"]
+
+    A --> E
+    B --> E
+    C --> E
+    D --> E
+    E --> F
+```
 
 ## Available Scripts
 
@@ -141,6 +194,13 @@ aa-bb-lan-chat/
 - Only three roles are supported out of the box
 - This project is meant for trusted local networks, not internet exposure
 
+## Good Fit For
+
+- Learning or teaching Socket.IO fundamentals
+- Prototyping a lightweight local coordination tool
+- Demonstrating role-based presence in a compact codebase
+- Testing small workflow ideas before moving into a larger app
+
 ## Roadmap
 
 - Add optional persistent storage for recent message history
@@ -153,6 +213,10 @@ aa-bb-lan-chat/
 - GitHub issue templates are included for bugs and feature requests
 - CODEOWNERS is configured for the primary maintainer
 - Security reporting guidance is documented in [SECURITY.md](./SECURITY.md)
+
+## Release Notes
+
+- Latest release summary: [v1.0.0 release notes](./docs/releases/v1.0.0.md)
 
 ## Contributing
 
