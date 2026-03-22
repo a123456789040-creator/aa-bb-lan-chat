@@ -4,6 +4,8 @@ A small LAN chat app for three fixed participants: `AA`, `BB`, and `CC`.
 
 The project is intentionally simple: one Node.js server, one static frontend, and a few helper scripts for smoke testing and sending messages from the terminal. It is useful as a local collaboration demo, a Socket.IO reference project, or a starting point for lightweight team tools on the same network.
 
+![AA BB LAN Chat demo](./docs/assets/aa-bb-lan-chat-demo.png)
+
 ## Features
 
 - Fixed role claiming for `AA`, `BB`, and `CC`
@@ -52,6 +54,7 @@ Devices on the same LAN can open that URL and claim one of the three roles.
 - `npm run dev`: restart automatically when `server.js` changes
 - `npm run smoke`: launch the server and verify that AA, BB, and CC can connect and exchange messages
 - `npm run history`: print recent message history as JSON
+- `npm run demo:seed`: send a short demo conversation to a running server
 - `npm test`: alias for the smoke test
 
 ## Command-Line Helpers
@@ -78,6 +81,12 @@ Use a custom server URL:
 
 ```bash
 node scripts/send-chat.js --role CC --url http://127.0.0.1:3010 --text "Ready."
+```
+
+Seed a running server with example messages for demos or screenshots:
+
+```bash
+npm run demo:seed -- --url http://127.0.0.1:3000
 ```
 
 ## Environment Variables
@@ -127,6 +136,12 @@ aa-bb-lan-chat/
 - There is no authentication beyond claiming one of the fixed roles
 - Only three roles are supported out of the box
 - This project is meant for trusted local networks, not internet exposure
+
+## Roadmap
+
+- Add optional persistent storage for recent message history
+- Support configurable role names or room presets
+- Add lightweight access controls for shared LAN environments
 
 ## Contributing
 
