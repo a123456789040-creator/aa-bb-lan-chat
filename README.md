@@ -1,5 +1,9 @@
 # AA BB LAN Chat
 
+[![CI](https://github.com/a123456789040-creator/aa-bb-lan-chat/actions/workflows/ci.yml/badge.svg)](https://github.com/a123456789040-creator/aa-bb-lan-chat/actions/workflows/ci.yml)
+[![Release](https://img.shields.io/github/v/tag/a123456789040-creator/aa-bb-lan-chat?label=release)](https://github.com/a123456789040-creator/aa-bb-lan-chat/releases)
+[![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](./LICENSE)
+
 A small LAN chat app for three fixed participants: `AA`, `BB`, and `CC`.
 
 The project is intentionally simple: one Node.js server, one static frontend, and a few helper scripts for smoke testing and sending messages from the terminal. It is useful as a local collaboration demo, a Socket.IO reference project, or a starting point for lightweight team tools on the same network.
@@ -142,6 +146,13 @@ aa-bb-lan-chat/
 - Add optional persistent storage for recent message history
 - Support configurable role names or room presets
 - Add lightweight access controls for shared LAN environments
+
+## Maintenance
+
+- CI runs `npm test` on pushes and pull requests
+- GitHub issue templates are included for bugs and feature requests
+- CODEOWNERS is configured for the primary maintainer
+- Security reporting guidance is documented in [SECURITY.md](./SECURITY.md)
 
 ## Contributing
 
