@@ -4,6 +4,15 @@
 
 - `aa-bb-lan-chat`
 
+## Suggested Publish Commands
+
+After creating the GitHub repository in the browser:
+
+```bash
+git remote add origin https://github.com/<your-github-user>/aa-bb-lan-chat.git
+git push -u origin main
+```
+
 ## Suggested GitHub Description
 
 - Lightweight three-role LAN chat demo built with Express and Socket.IO.
