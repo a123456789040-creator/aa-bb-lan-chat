@@ -1,0 +1,33 @@
+{
+  "name": "aa-bb-lan-chat",
+  "version": "1.0.0",
+  "description": "Small LAN chat demo with fixed AA, BB, and CC roles built with Express and Socket.IO.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js",
+    "smoke": "node scripts/smoke-test.js",
+    "history": "node scripts/read-history.js",
+    "test": "npm run smoke"
+  },
+  "keywords": [
+    "codex",
+    "lan",
+    "chat",
+    "socket.io",
+    "express",
+    "demo"
+  ],
+  "author": "AA",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "express": "^5.1.0",
+    "socket.io": "^4.8.1"
+  },
+  "devDependencies": {
+    "socket.io-client": "^4.8.3"
+  }
+}

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AA BB LAN Chat</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <aside class="hero-panel">
+        <p class="eyebrow">LAN COLLABORATION DEMO</p>
+        <h1>AA, BB, and CC in one shared local room.</h1>
+        <p class="hero-copy">
+          This lightweight chat app lets three fixed roles talk over the same local network. Open it on
+          multiple devices, claim a role, and exchange quick updates without external services.
+        </p>
+
+        <section class="card">
+          <div class="card-header">
+            <h2>Claim a role</h2>
+            <span id="sessionBadge" class="badge badge-idle">Not claimed</span>
+          </div>
+          <div class="role-grid">
+            <button class="role-button aa" data-role="AA">Claim AA</button>
+            <button class="role-button bb" data-role="BB">Claim BB</button>
+            <button class="role-button cc" data-role="CC">Claim CC</button>
+          </div>
+          <p id="roleHint" class="hint">
+            Each role can only be claimed by one active client at a time.
+          </p>
+        </section>
+
+        <section class="card">
+          <div class="card-header">
+            <h2>LAN access</h2>
+            <span class="badge">Network</span>
+          </div>
+          <div id="networkList" class="network-list">
+            <div class="network-empty">Looking for private LAN addresses...</div>
+          </div>
+          <p class="hint">
+            Open one of the LAN URLs below on phones, tablets, or laptops connected to the same Wi-Fi or
+            Ethernet network.
+          </p>
+        </section>
+      </aside>
+
+      <main class="chat-panel">
+        <header class="chat-header">
+          <div>
+            <p class="eyebrow">LIVE CHANNEL</p>
+            <h2>Shared room</h2>
+          </div>
+          <div class="presence">
+            <div class="presence-item">
+              <span class="presence-dot aa" id="presenceAA"></span>
+              <span>AA</span>
+            </div>
+            <div class="presence-item">
+              <span class="presence-dot bb" id="presenceBB"></span>
+              <span>BB</span>
+            </div>
+            <div class="presence-item">
+              <span class="presence-dot cc" id="presenceCC"></span>
+              <span>CC</span>
+            </div>
+          </div>
+        </header>
+
+        <section id="messages" class="messages" aria-live="polite"></section>
+
+        <div class="composer-shell">
+          <p id="typingStatus" class="typing-status">Nobody is typing right now.</p>
+          <form id="composer" class="composer">
+            <textarea
+              id="messageInput"
+              rows="3"
+              maxlength="500"
+              placeholder="Claim a role to start chatting..."
+              aria-label="Message input"
+            ></textarea>
+            <div class="composer-actions">
+              <span id="messageMeta" class="hint">0 / 500 characters</span>
+              <button id="sendButton" type="submit">Send message</button>
+            </div>
+          </form>
+          <p id="feedback" class="feedback"></p>
+        </div>
+      </main>
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/app.js"></script>
+  </body>
+</html>
