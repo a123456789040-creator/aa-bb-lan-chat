@@ -33,11 +33,9 @@ After the repository is created, add these topics:
 Run these commands in this folder:
 
 ```bash
-git remote add origin https://github.com/<your-github-user>/aa-bb-lan-chat.git
+git remote add origin https://github.com/a123456789040-creator/aa-bb-lan-chat.git
 git push -u origin main
 ```
-
-Replace `<your-github-user>` with your actual GitHub username.
 
 ## 4. Optional but recommended GitHub page edits
 
@@ -86,7 +84,7 @@ Because the codebase is compact and understandable, it is also a good candidate 
 ### GitHub repository
 
 ```text
-https://github.com/<your-github-user>/aa-bb-lan-chat
+https://github.com/a123456789040-creator/aa-bb-lan-chat
 ```
 
 ### If there are other people working with you on this project, please list their names here, and what role they will play in the project

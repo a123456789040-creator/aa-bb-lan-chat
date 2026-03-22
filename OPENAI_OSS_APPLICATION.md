@@ -31,7 +31,7 @@ Paste your public GitHub repository URL here after publishing.
 Example:
 
 ```text
-https://github.com/<your-github-user>/aa-bb-lan-chat
+https://github.com/a123456789040-creator/aa-bb-lan-chat
 ```
 
 ## Field: If there are other people working with you on this project, please list their names here, and what role they will play in the project
